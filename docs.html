@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasmnout</title>
+<style>
+  @font-face {
+    font-family: "Daydream";
+    src: url("Daydream.ttf"); /* Nahraď správnou cestou k souboru Daydream.ttf */
+  }
+
+  body {
+    margin: 0;
+    background-color: #111111;
+    color: white;
+    font-family: "Daydream", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+    text-align: center;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: typing 2s steps(12) 1s infinite;
+  }
+
+  @keyframes typing {
+    0% { content: "Rasmnout"; }
+    100% { content: "Rasmnout|"; }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 5px;
+  }
+
+  .menu-item {
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .menu-item:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+  .grid-item {
+    width: 300px;  /* Nastavení šířky na 300px */
+    height: 200px; /* Nastavení výšky na 200px */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(255, 215, 0, 0.7);
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+  }
+
+  .grid-item:hover img {
+    opacity: 0.8;
+  }
+
+  .grid-item .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .grid-item:hover .text {
+    background-color: #FFD700;
+    color: #111;
+  }
+
+  /* Animace pro text ve grid itemech */
+  .text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  .grid-item:hover .text {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h3 {
+    color: #FFD700;
+  }
+  h4 {
+    color: #FFD700;
+  }
+</style>
+</head>
+<body>
+
+<h1>Rasmnout</h1>
+
+<div class="menu">
+  <div class="menu-item" onclick="window.location.href='/docs.html'">docs</div>
+  <div class="menu-item" onclick="window.location.href='/index.html'">installation</div>
+  <div class="menu-item" onclick="window.location.href='/learn.html'">learn</div>
+</div>
+
+<h3>Introduction</h3>
+
+<h5>Rasmnout Tools is a suite of tools designed for analyzing and testing Wi-Fi<br>and Bluetooth network technologies. This toolset includes operating systems <br>like RtornW for Wi-Fi and RtornB for Bluetooth, specifically designed for the<br>Raspberry Pi platform. These operating systems allow you to perform various<br>network tests and scans, making them ideal for hackers, security experts,<br>and researchers in the field of cybersecurity.</h5>
+
+<h5>RtornW is an operating system optimized for Wi-Fi network analysis, enabling<br>you to carry out Man-In-The-Middle attacks, sniffing, and other security tests.<br> On the other hand, RtornB focuses on Bluetooth and allows you to analyze<br> Bluetooth communications, perform remote attacks, and assess the vulnerabilities<br> of Bluetooth devices.</h5>
+
+<h5>All tools within Rasmnout Tools are written in Python 3, making them easily<br>modifiable and extendable. For data visualization and user interaction, the toolset<br> integrates with the Waveshare 1.3inch OLED Hat, which is connected to<br>the Raspberry Pi, providing effective real-time information display. This platform<br> is perfect for performing tests and analyses on the spot.</h5>
+
+<h5>If you are looking for a simple yet powerful toolset for Wi-Fi and Bluetooth<br>security analysis, Rasmnout Tools is a great solution for your needs.</h5>
+<br>
+<br>
+<br>
+<br>
+<h3>Requirements</h3>
+
+<h5>To run Rasmnout Tools, the following system and software requirements are necessary:</h5>
+<h3>Hardware:</h3>
+<h5>Raspberry Pi (model 3, 4, or Zero WH) for running the RtornW and RtornB operating systems.<br>Waveshare 1.3inch OLED Hat for displaying output and interacting with the tools in real-time.<br>Wi-Fi and Bluetooth connectivity for communication and testing.</h5>
+
+<h3>Software:</h3>
+<h5>Operating System: The tools are fully compatible with Linux (preferably Raspberry Pi OS distribution)<br> and Windows. Python 3.8+: Required for running all tools and operating systems.<br> Python is the core for communication and scripting the tools.</h5>
+<h3>    Libraries:</h3>
+<h5>        PySerial for serial communication (if using external devices).<br>Bleak for Bluetooth communication and scanning.<br>Scapy, Wireshark, or other network analysis tools (depends on the specific tool).<br>Raspberry Pi specific libraries for controlling the display (e.g., Waveshare).</h5>
+
+<h3>Additional Requirements:</h3>
+
+<h5>Administrator Privileges: For certain functions, such as scanning network traffic<br> and interacting with hardware, administrator rights will be needed.<br> Dependencies: Before installation, you may need to install the required libraries and packages<br>through pip or other package managers.</h5>
+
+<h5>If your system meets these requirements, you can easily install and start using Rasmnout Tools<br> for testing Wi-Fi and Bluetooth networks and devices.</h5>
+</body>
+</html>
