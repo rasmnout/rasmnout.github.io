@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'YsabeauSC';
+            src: url('YsabeauSC-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff; /* Bílé pozadí */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeOut 1s ease-in-out 5s forwards;
+        }
+
+        #loading img {
+            width: 450px; /* 3x the original size */
+            height: auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        #menu {
+            position: fixed; /* Připneme menu na vrchol stránky */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: auto;
+            margin-top: 10px;
+        }
+
+        #menu.show {
+            opacity: 1;
+        }
+
+        #menu img {
+            height: 55px; /* Větší velikost loga */
+            width: auto;
+            margin-right: 20px; /* Mezera mezi logem a položkami menu */
+            /* Zajistíme, že při hover efektu nebudou žádné změny */
+            border: none; /* Bez rámečku */
+            transition: none; /* Zrušíme jakékoli přechody */
+        }
+
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px; /* Větší mezery mezi položkami */
+            font-family: 'YsabeauSC', sans-serif;
+            padding: 5px 10px;
+            transition: all 0.3s ease; /* Plynulý přechod pro změny */
+        }
+
+        #menu a:hover {
+            color: white; /* Bílá barva textu */
+            font-weight: bold; /* Tučný text */
+            background-color: black; /* Černé pozadí kolem textu */
+            border-radius: 5px; /* Zaoblené rohy pozadí */
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Bílý rám */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        #content {
+            display: none;
+            font-size: 24px;
+            font-family: 'YsabeauSC', sans-serif;
+            padding: 20px;
+            max-width: 900px; /* Nastavit šířku pro lepší čitelnost */
+            margin: 0 auto; /* Udržet obsah na středu */
+            max-height: 80vh; /* Maximální výška obsahu (80% výšky okna) */
+            overflow-y: auto; /* Povolit vertikální scrollování */
+        }
+        pre {
+            background-color: #f0f0f0; /* Světle šedé pozadí pro příkazy */
+            color: black; /* Černý text */
+            padding: 15px;
+            border-radius: 10px; /* Zaoblené rohy */
+            font-size: 18px;
+            width: 100%;
+            overflow-x: auto; /* Umožní horizontální skrolování */
+            box-sizing: border-box;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background-color: black; /* Černé pozadí pro kód */
+            color: white; /* Bílý text pro kód */
+            padding: 5px;
+            border-radius: 5px; /* Zaoblené rohy pro kód */
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .show {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <img src="logo-rasmnout.jpeg" alt="Rasmnout Logo">
+    </div>
+
+    <div id="menu">
+        <a href="about.html">
+            <img src="menu-rasmnout.jpg" alt="Rasmnout Logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="installation.html">Installation</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div id="frame"></div>
+
+    <div id="content">
+        <h3>Introduction</h3>
+        <p>
+            Rasmnout is an integrated toolset for managing and optimizing Bluetooth, Wi-Fi, and network operations. Whether you’re a beginner or an experienced professional, Rasmnout simplifies wireless device management, network analysis, and security tasks. With its intuitive interface and powerful features, Rasmnout supports a wide range of hardware, making it the ideal choice for IoT projects, network testing, and wireless device management.
+        </p>
+        <h3>Features</h3>
+        <ul>
+        <li>Bluetooth Device Management: Seamlessly connect to and manage Bluetooth devices, perform scans, and interact with nearby devices for a variety of tasks.</li>
+
+        <li>Wi-Fi Network Scanning & Analysis: Detect and analyze available Wi-Fi networks, perform penetration testing, and monitor network health with ease.</li>
+            
+        <li>Network Monitoring & Attacks: Execute network-based attacks, analyze traffic, and simulate security threats for penetration testing and vulnerability assessments.</li>
+            
+        <li>Advanced Tools for Professionals: Utilize powerful features like FoxWB+ for complex attack simulations and network security evaluations.</li>
+            
+        <li>User-Friendly Interface: Designed for ease of use, allowing both beginners and experts to quickly perform essential tasks without steep learning curves.</li>
+            
+        <li>Cross-Platform Compatibility: Fully compatible with popular hardware like Raspberry Pi (1-5, Zero models) and ESP32/ESP8266 for flexibility in embedded and IoT projects.</li>
+            
+        <li>Customizable for Your Needs: Tailor Rasmnout to your specific use case with its modular tools and advanced configuration options.</li>
+        </ul>
+        <h3>Download</h3>
+        <h3>Installation of Ravix Connecter and Ravix Connecter Console</h3>
+
+        <h4>Ravix Connecter for Windows and Linux</h4>
+        <p>To install Ravix Connecter for Windows and Linux, you can use one of the following sources:</p>
+        <ul>
+            <li><a href="https://github.com/rasmnout/ravix/releases/" target="_blank">Official Ravix GitHub page</a></li>
+            <li><a href="https://rasmnout.com" target="_blank">Official Rasmnout website</a></li>
+        </ul>
+
+        <h4>Installation on Linux</h4>
+        <p>To install on Linux, follow these steps:</p>
+        <ol>
+            <li>Update the package list and install the necessary tools:</li>
+            <pre><code>sudo apt update</code></pre>
+            <pre><code>sudo apt install python3 git python3-pip</code></pre>
+            <li>Download the <code>rasvix-con.py</code> file from GitHub:</li>
+            <pre><code>wget https://raw.githubusercontent.com/rasmnout/ravix/main/con.py -O rasvix-con.py</code></pre>
+            <li>Run the console application with the <code>-h</code> switch to display help:</li>
+            <pre><code>python3 rasvix-con.py -h</code></pre>
+        </ol>
+
+        <h4>Installation on Windows</h4>
+        <p>To install on Windows, follow these steps:</p>
+        <ol>
+            <li>First, download and install Python from the official page: <a href="https://www.python.org/" target="_blank">https://www.python.org/</a></li>
+            <li>Open PowerShell and download the <code>rasvix-con.py</code> file:</li>
+            <pre><code>wget https://raw.githubusercontent.com/rasmnout/ravix/main/con.py -O rasvix-con.py</code></pre>
+            <li>Run the file using Python and use the <code>-h</code> switch to display help:</li>
+            <pre><code>python rasvix-con.py -h</code></pre>
+        </ol>
+        <h3>Ravix and Ravix+ for Raspberry Pi 3/Zero</h3>
+
+        <p>Installation of Ravix OS can be found on the <a href="https://rasmnout.github.io/installation.html" target="_blank">Installation</a> page and more information and tutorials are available on GitHub:</p>
+        <ul>
+            <li><a href="https://rasmnout.github.io/installation.html" target="_blank">Installation Guide</a></li>
+            <li><a href="https://github.com/rasmnout/ravix/releases/" target="_blank">Official Ravix GitHub page</a></li>
+        </ul>
+
+        <h4>Linux</h4>
+        <p>To install Ravix on Raspberry Pi, follow the steps below:</p>
+        <p><strong>For Raspberry Pi 3:</strong></p>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/ravix/main/ravixRPI3.img -O ravix.img</code></pre>
+        <p><strong>For Raspberry Pi Zero:</strong></p>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/ravix/main/ravixRPI0.img -O ravix.img</code></pre>
+
+        <p>Next, write the image to your SD card:</p>
+        <pre><code>sudo dd if=ravix.img of=/dev/<SD_CARD> bs=4M status=progress conv=fsync</code></pre>
+        <p>After writing the image to the SD card, add the file <code>main.conf</code> to the SD card.</p>
+        <p>In the <code>main.conf</code> file, add the following configuration:</p>
+        <pre><code>wifi:{
+	ssid="<YOUR_WIFI_SSID>"
+	psk="<YOUR_WIFI_PASSWORD>"
+}</code></pre>
+        <p>Alternatively, you can use the BSSID of the Wi-Fi:</p>
+        <pre><code>wifi:{
+	bssid="<YOUR_WIFI_BSSID>"
+	psk="<YOUR_WIFI_PASSWORD>"
+}</code></pre>
+        <p>If you are using an open Wi-Fi network, use:</p>
+        <pre><code>wifi:{
+	ssid="<YOUR_WIFI_SSID>"
+	OPEN
+}</code></pre>
+        <p>Or:</p>
+        <pre><code>wifi:{
+	bssid="<YOUR_WIFI_BSSID>"
+	OPEN
+}</code></pre>
+
+        <h4>Windows</h4>
+        <p>To install Ravix on Windows, download and run the Rasmnout Setup from:</p>
+        <ul>
+            <li><a href="https://rasmnout.github.io/installation.html" target="_blank">Rasmnout Installation Guide</a></li>
+        </ul>
+        <p>Extract and run the Rasmnout Setup installer. After installation, you should see the Rasmnout Setup icon on your desktop.</p>
+        <p>Open Rasmnout Setup, select your preferred options and operating system.</p>
+        <p>Then, run Rasmnout Connecter, and it should connect to Ravix. If Ravix does not connect, it will create a Wi-Fi network named: <strong>Ravix-RPI</strong> with the Wi-Fi password: <strong>R7SMN0U9r7sv1x</strong></p>
+        <p>Once you connect to this Wi-Fi, you should successfully connect to Ravix!</p>
+    <h5>More at <a href="https://rasmnout.github.io/installation.html" target="_blank">Rasmnout Installation Guide</a><h5>
+    </div>
+
+    <script>
+        let menu = document.getElementById('menu');
+        let frame = document.getElementById('frame');
+        let content = document.getElementById('content');
+        let loading = document.getElementById('loading');
+
+        // Kontrola, zda je uživatel na stránce Home
+        if (window.location.pathname !== '/index.html') {
+            // Pokud není na index.html, spustí se animace
+            setTimeout(() => {
+                loading.style.display = 'none';
+                content.style.display = 'block';
+                content.classList.add('show');
+                menu.classList.add('show');  // Menu se zobrazí s animací po textu
+            }, 7000);
+        } else {
+            // Pokud je na index.html, skryje se animace
+            loading.style.display = 'none';
+            content.style.display = 'block';
+            content.classList.add('show');
+            menu.classList.add('show');
+        }
+
+        menu.addEventListener('mouseover', () => {
+            frame.style.display = 'none';
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            frame.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

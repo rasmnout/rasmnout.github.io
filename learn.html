@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'YsabeauSC';
+            src: url('YsabeauSC-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #menu {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: auto;
+        }
+
+        #menu.show {
+            opacity: 1;
+        }
+
+        #menu img {
+            height: 55px;
+            width: auto;
+            margin-right: 20px;
+            border: none;
+            transition: none;
+        }
+
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px;
+            font-family: 'YsabeauSC', sans-serif;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: white;
+            font-weight: bold;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #content {
+            font-size: 24px;
+            font-family: 'YsabeauSC', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .show {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <a href="about.html">
+            <img src="menu-rasmnout.jpg" alt="Rasmnout Logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="installation.html">Installation</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div id="frame"></div>
+
+    <div id="content">
+        No tool
+    </div>
+
+    <script>
+        let menu = document.getElementById('menu');
+        let frame = document.getElementById('frame');
+        let content = document.getElementById('content');
+
+        // Po načtení stránky se zobrazuje obsah a menu
+        content.style.display = 'block';
+        content.classList.add('show');
+        menu.classList.add('show');
+
+        menu.addEventListener('mouseover', () => {
+            frame.style.display = 'none';
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            frame.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

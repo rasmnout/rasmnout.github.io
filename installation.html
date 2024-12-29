@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'YsabeauSC';
+            src: url('YsabeauSC-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        #menu {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 10;
+        }
+
+        #menu img {
+            height: 55px;
+            width: auto;
+            margin-right: 20px;
+            border: none;
+        }
+
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px;
+            font-family: 'YsabeauSC', sans-serif;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: white;
+            font-weight: bold;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 100px;
+            width: 80%;
+        }
+
+        .card {
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            margin-bottom: 10px;
+            background-color: #ccc;
+        }
+
+        .card .name {
+            font-family: 'YsabeauSC', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card .text-support {
+            font-family: 'YsabeauSC', sans-serif;
+            font-size: 16px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <a href="about.html">
+            <img src="menu-rasmnout.jpg" alt="Rasmnout Logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="installation.html">Installation</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <a href="ravix.html">
+                <img src="ravix.jpeg" alt="Ravix">
+                <div class="name">Ravix</div>
+                <div class="text-support">Raspberry Pi 1/2/3/4/5/Zero</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="ravix+.html">
+                <img src="ravix+.jpeg" alt="Ravix+">
+                <div class="name">Ravix+</div>
+                <div class="text-support">Raspberry Pi 3/Zero</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="zapflood.html">
+                <img src="zapflood.jpeg" alt="ZapFlood">
+                <div class="name">ZapFlood</div>
+                <div class="text-support">Raspberry Pi 1/2/3/4/5/Zero</div>
+                <div class="text-support">ESP32</div>
+                <div class="text-support">ESP8266</div>
+                <div class="text-support">Linux</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="zapflood+.html">
+                <img src="zapflood+.jpg" alt="ZapFlood+">
+                <div class="name">ZapFlood+</div>
+                <div class="text-support">Raspberry Pi 3/Zero</div>
+            </a>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <a href="rasmnoutsetup.html">
+                <img src="rasmnoutsetup.png" alt="Rasmnout Connecter">
+                <div class="name">Rasmnout Setup</div>
+                <div class="text-support">Windows</div>
+                <div class="text-support">Linux</div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="rasmnoutconnecter.html">
+                <img src="rasmnoutconnecter.png" alt="Rasmnout Connecter">
+                <div class="name">Rasmnout Connecter</div>
+                <div class="text-support">Windows</div>
+                <div class="text-support">Linux</div>
+            </a>
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+    </div>
+
+</body>
+</html>
