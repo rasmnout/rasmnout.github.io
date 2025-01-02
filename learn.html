@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasmnout Learn</title>
-    <link rel="icon" href="1735485457189.png" type="image/x-icon">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         @font-face {
             font-family: 'YsabeauSC';
@@ -80,10 +80,53 @@
         }
 
         #content {
-            font-size: 24px;
+            font-size: 18px;
             font-family: 'YsabeauSC', sans-serif;
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 80vh;
+            overflow-y: auto;
+            line-height: 1.6;
         }
 
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #1e1f1e;
+            color: white;
+            font-size: 28px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #6d6d6d;
+        }
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -97,14 +140,15 @@
             display: block;
             animation: fadeIn 1s ease-in-out;
         }
+        
     </style>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          "name": "Rasmnout Learn",
+          "name": "Rasmnout",
           "description": "Rasmnout is an integrated toolset for managing and optimizing Bluetooth, Wi-Fi, and network operations. It simplifies wireless device management, network analysis, and security tasks.",
-          "url": "https://rasmnout.github.io/learn.html",
+          "url": "https://rasmnout.github.io",
           "applicationCategory": "Networking",
           "operatingSystem": ["Windows", "Linux", "Raspberry Pi", "ESP32", "ESP8266", "Raspberry Pi Zero", "Raspberry Pi 3", "Raspberry Pi 3 Model B", "Raspberry Pi 3 Model B+", "Raspberry Pi 3 Model A", "Raspberry Pi Zero W","Raspberry Pi Zero WH","Ravix","Ravix+","ZapFlood","ZapFlood+","How to","Rasmnout How to", "Learn","Learning","Rasmnout Learn", "Tools", "Rasmnout Tools"],
           "offers": {
@@ -136,7 +180,133 @@
     <div id="frame"></div>
 
     <div id="content">
-        No tool
+        <h1>ZapFlood Console</h1>
+        <h3>Program for deauth flood</h3>
+        <p><strong>ZapFlood Console</strong> is an advanced tool designed to initiate deauthentication (deauth) flood attacks on Wi-Fi networks. These attacks are primarily used to disrupt the communication between wireless devices by continuously sending deauthentication packets to the target network or device. ZapFlood provides an intuitive console interface to execute these attacks with detailed monitoring and control options.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Customizable Interface Selection:</strong> Select the network interface for the attack, supporting various wireless adapters and configurations.</li>
+            <li><strong>Continuous Flooding:</strong> Launch a persistent deauthentication flood on the target network or channel until manually stopped.</li>
+            <li><strong>Channel-Specific Attacks:</strong> Choose a specific Wi-Fi channel (1-14) for targeted deauth flooding to disrupt the targeted access points more efficiently.</li>
+            <li><strong>Real-Time Monitoring:</strong> Track the status of ongoing deauth attacks, including the number of packets sent and targeted devices.</li>
+            <li><strong>Easy-to-Use Console Interface:</strong> The console interface is designed to be simple and accessible, with clear instructions and a log output to show the deauth attack status.</li>
+            <li><strong>Network Scanning:</strong> Automatically scans for nearby networks and retrieves necessary details, including BSSID, channel, and signal strength (RSSI), which can be stored in JSON files for later use in attacks.</li>
+            <li><strong>Version Information:</strong> Check the program’s version using the <code>--version</code> command option for the latest updates.</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <p>The tool starts by scanning the environment to detect available Wi-Fi networks. During the scan, it switches between channels (1-14) and listens for beacon frames from nearby access points. The detected information, such as the BSSID and channel, is saved into a <code>bssid_list.js</code> file, which is then used to target specific networks during the deauthentication attack.</p>
+        <p>Once the networks are detected, the program sends a continuous stream of deauthentication packets to the selected BSSIDs on their respective channels. This action forces devices to disconnect, causing temporary disruption of the network. The process can be stopped or modified at any time, depending on the user’s needs.</p>
+
+        <h2>Advanced Options</h2>
+        <ul>
+            <li><strong>Live Session Monitoring:</strong> View live logs and statistics as the deauth flood is executed, helping to track the progress of the attack.</li>
+            <li><strong>Channel-Specific Attacks:</strong> You can target specific channels for a more efficient deauth flood, optimizing the disruption to devices connected to those channels.</li>
+            <li><strong>Multithreading:</strong> The tool uses multithreading to increase the efficiency of sending deauthentication packets, ensuring that the attack remains effective even with a high volume of traffic.</li>
+            <li><strong>JSON Logs:</strong> All scanning data and attack logs are saved in a JSON format for easy review and analysis, providing detailed information on the networks and devices targeted during the attack.</li>
+        </ul>
+
+        <h2>Usage Instructions</h2>
+        <p>To use the ZapFlood Console, open a terminal window and run the tool with the desired options. The basic command structure is:</p>
+        <pre><code>zapflood -i/--interface INTERFACE -c/--channel CHANNEL</code></pre>
+        <p>Additional options include:</p>
+        <ul>
+            <li><strong>-i/interface--:</strong> Select interface for deauth flood.</li>
+            <li><strong>-s/--still:</strong> Run deauth flood continuously.</li>
+            <li><strong>-c/--channel:</strong> Set the channel for deauth flood, it will deauth all networks on the selected channel.</li>
+            <li><strong>--live:</strong> Console with overview information.</li>
+            <li><strong>--no-color:</strong> No Colors.</li>
+            <li><strong>--version:</strong> Check the current version of the program.</li>
+        </ul>
+        <h2>Usage:</h2>
+        <p>Get information about the argument what has zapflood:</p>
+        <pre><code>
+root@rasmnout:~# zapflood -h/--help
+usage: zapflood.py [-h] [-i INTERFACE] [-s] [-c CHANNEL] [--live] [--no-color] [--version]
+            
+zapflood: Program for deauth flood
+            
+options:
+  -h, --help            show this help message and exit
+  -i INTERFACE, --interface INTERFACE
+                        Select interface for deauth flood
+  -s, --still           Run deauth flood continuously
+  -c CHANNEL, --channel CHANNEL
+                        Set the channel for deauth flood, it will deauth all networks on
+                        the selected channel
+  --live                Console with overview information
+  --no-color            No Colors
+  --version             Version ZapFlood Console
+        </code></pre>
+        <p>To launch an attack on channel 6 with wlan0mon</p>
+        <pre><code>
+root@rasmnout:~# zapflood -i wlan0mon -c 6
+
+21:00:09 INFO: Scanning the Access Point on Channel 6
+BSSID: xx:xx:xx:xx:xx:xx    CH: 6          RSSI: -10        STA: SCANNED
+BSSID: yy:yy:yy:yy:yy:yy    CH: 6          RSSI: -20        STA: SCANNED
+BSSID: zz:zz:zz:zz:zz:zz    CH: 6          RSSI: -30        STA: SCANNED
+21:00:23 INFO: Access Point scanning has been completed
+21:00:23 INFO: I'm running Deauth on channel 6
+21:00:23 INFO: Deauth on channel: 6
+BSSID               CHANNEL   RSSI      STATUS
+xx:xx:xx:xx:xx:xx   6         -10       DEAUTHING
+
+21:00:23 INFO: Deauth on channel: 6
+
+BSSID               CHANNEL   RSSI      STATUS
+yy:yy:yy:yy:yy:yy   6         -20       DEAUTHING
+
+21:00:23 INFO: Deauth on channel: 6
+
+BSSID               CHANNEL   RSSI      STATUS
+zz:zz:zz:zz:zz:zz   6         -30       DEAUTHING
+        </code></pre>
+        <p>deauth on all channels (deauth flood)</p>
+        <pre><code>
+root@rasmnout:~# zapflood -i wlan0mon --live
+STATUS: Scanning        Time: 14s
+
+BSSID               CHANNEL   RSSI      STATUS
+xx:xx:xx:xx:xx:xx   1         -10       SCANNED
+yy:yy:yy:yy:yy:yy   2         -20       SCANNED
+zz:zz:zz:zz:zz:zz   3         -30       SCANNED
+
+-------------------------------------------------
+
+STATUS: Deauthing        Time: After
+
+BSSID               CHANNEL   RSSI      STATUS
+xx:xx:xx:xx:xx:xx   1         -10      DEAUTHING
+yy:yy:yy:yy:yy:yy   2         -20      DEAUTHING
+zz:zz:zz:zz:zz:zz   3         -30      DEAUTHING
+        </code></pre>
+        <p>deauth on all channel (deauth flood) all the time</p>
+        <pre><code>
+root@rasmnout:~# zapflood -i wlan0mon --live --still
+STATUS: Scanning        Time: 14s
+            
+BSSID               CHANNEL   RSSI      STATUS
+xx:xx:xx:xx:xx:xx   1         -10       SCANNED
+yy:yy:yy:yy:yy:yy   2         -20       SCANNED
+zz:zz:zz:zz:zz:zz   3         -30       SCANNED
+            
+-------------------------------------------------
+            
+STATUS: Deauthing        Time: After
+            
+BSSID               CHANNEL   RSSI      STATUS
+xx:xx:xx:xx:xx:xx   1         -10      DEAUTHING
+yy:yy:yy:yy:yy:yy   2         -20      DEAUTHING
+zz:zz:zz:zz:zz:zz   3         -30      DEAUTHING
+        </code></pre>
+        <p>ZapFlood Console Version</p>
+        <code><pre>root@rasmnout:~# zapflood --version
+Rasmnout ZapFlood Console v0.1.1Q
+        </pre></code>
+        <p>Rasmnout ZapFlood Console works by scanning channels 1-14 for 14 seconds, spending 1 second per channel. After scanning each channel, it attempts to deauth the access points on that channel. Once it deauths all channels 1-14, it repeats the process if the <strong>--still</strong> argument is selected.
+If a specific channel is selected with <strong>-c/--channel</strong>, ZapFloodC will first scan the selected channel for 14 seconds, then it will deauth all the access points found on that channel. After the deauth, it will repeat the process if the <strong>--still</strong> argument is selected.</p>
     </div>
 
     <script>
@@ -144,7 +314,6 @@
         let frame = document.getElementById('frame');
         let content = document.getElementById('content');
 
-        // Po načtení stránky se zobrazuje obsah a menu
         content.style.display = 'block';
         content.classList.add('show');
         menu.classList.add('show');
