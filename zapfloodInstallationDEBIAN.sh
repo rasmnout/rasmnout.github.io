@@ -4,6 +4,7 @@ wget https://raw.githubusercontent.com/rasmnout/zapflood/main/zapfloodConsole.zi
 unzip zapfloodConsole.zip
 mv zapflood/ zapfloodconsole/
 mv zapfloodconsole/ /usr/local/bin/
+rm zapfloodConsole.zip
 sudo chmod +x /usr/local/bin/zapfloodconsole
 touch /usr/local/bin/zapflood
 echo "#!/bin/bash" > /usr/local/bin/zapflood
