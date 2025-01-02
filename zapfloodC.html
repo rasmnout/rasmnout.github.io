@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'YsabeauSC';
+            src: url('YsabeauSC-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #menu {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: auto;
+        }
+
+        #menu.show {
+            opacity: 1;
+        }
+
+        #menu img {
+            height: 55px;
+            width: auto;
+            margin-right: 20px;
+            border: none;
+            transition: none;
+        }
+
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 20px;
+            font-family: 'YsabeauSC', sans-serif;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: white;
+            font-weight: bold;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #content {
+            font-size: 18px;
+            font-family: 'YsabeauSC', sans-serif;
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 80vh;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #1e1f1e;
+            color: white;
+            font-size: 28px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #6d6d6d;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .show {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+    </style>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Rasmnout",
+          "description": "Rasmnout is an integrated toolset for managing and optimizing Bluetooth, Wi-Fi, and network operations. It simplifies wireless device management, network analysis, and security tasks.",
+          "url": "https://rasmnout.github.io",
+          "applicationCategory": "Networking",
+          "operatingSystem": ["Windows", "Linux", "Raspberry Pi", "ESP32", "ESP8266", "Raspberry Pi Zero", "Raspberry Pi 3", "Raspberry Pi 3 Model B", "Raspberry Pi 3 Model B+", "Raspberry Pi 3 Model A", "Raspberry Pi Zero W","Raspberry Pi Zero WH","Ravix","Ravix+","ZapFlood","ZapFlood+","How to","Rasmnout How to", "Learn","Learning","Rasmnout Learn", "Tools", "Rasmnout Tools"],
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          },
+          "softwareVersion": "0.1.2.1",
+          "creator": {
+            "@type": "Organization",
+            "name": "Rasmnout"
+          }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="menu">
+        <a href="about.html">
+            <img src="menu-rasmnout.jpg" alt="Rasmnout Logo">
+        </a>
+        <a href="index.html">Home</a>
+        <a href="installation.html">Installation</a>
+        <a href="docs.html">Docs</a>
+        <a href="learn.html">Learn</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div id="frame"></div>
+
+    <div id="content">
+        <h1>ZapFlood Console</h1>
+        <h3>Program for deauth flood</h3>
+        <p><strong>ZapFlood Console</strong> is an advanced tool designed to initiate deauthentication (deauth) flood attacks on Wi-Fi networks. These attacks are primarily used to disrupt the communication between wireless devices by continuously sending deauthentication packets to the target network or device. ZapFlood provides an intuitive console interface to execute these attacks with detailed monitoring and control options.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Customizable Interface Selection:</strong> Select the network interface for the attack, supporting various wireless adapters and configurations.</li>
+            <li><strong>Continuous Flooding:</strong> Launch a persistent deauthentication flood on the target network or channel until manually stopped.</li>
+            <li><strong>Channel-Specific Attacks:</strong> Choose a specific Wi-Fi channel (1-14) for targeted deauth flooding to disrupt the targeted access points more efficiently.</li>
+            <li><strong>Real-Time Monitoring:</strong> Track the status of ongoing deauth attacks, including the number of packets sent and targeted devices.</li>
+            <li><strong>Easy-to-Use Console Interface:</strong> The console interface is designed to be simple and accessible, with clear instructions and a log output to show the deauth attack status.</li>
+            <li><strong>Network Scanning:</strong> Automatically scans for nearby networks and retrieves necessary details, including BSSID, channel, and signal strength (RSSI), which can be stored in JSON files for later use in attacks.</li>
+            <li><strong>Version Information:</strong> Check the program’s version using the <code>--version</code> command option for the latest updates.</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <p>The tool starts by scanning the environment to detect available Wi-Fi networks. During the scan, it switches between channels (1-14) and listens for beacon frames from nearby access points. The detected information, such as the BSSID and channel, is saved into a <code>bssid_list.js</code> file, which is then used to target specific networks during the deauthentication attack.</p>
+        <p>Once the networks are detected, the program sends a continuous stream of deauthentication packets to the selected BSSIDs on their respective channels. This action forces devices to disconnect, causing temporary disruption of the network. The process can be stopped or modified at any time, depending on the user’s needs.</p>
+
+        <h2>Advanced Options</h2>
+        <ul>
+            <li><strong>Live Session Monitoring:</strong> View live logs and statistics as the deauth flood is executed, helping to track the progress of the attack.</li>
+            <li><strong>Channel-Specific Attacks:</strong> You can target specific channels for a more efficient deauth flood, optimizing the disruption to devices connected to those channels.</li>
+            <li><strong>Multithreading:</strong> The tool uses multithreading to increase the efficiency of sending deauthentication packets, ensuring that the attack remains effective even with a high volume of traffic.</li>
+            <li><strong>JSON Logs:</strong> All scanning data and attack logs are saved in a JSON format for easy review and analysis, providing detailed information on the networks and devices targeted during the attack.</li>
+        </ul>
+
+        <h2>Usage Instructions</h2>
+        <p>To use the ZapFlood Console, open a terminal window and run the tool with the desired options. The basic command structure is:</p>
+        <pre><code>python zapflood.py --interface INTERFACE --channel CHANNEL</code></pre>
+        <p>Additional options include:</p>
+        <ul>
+            <li><strong>-i/interface--:</strong> Select interface for deauth flood.</li>
+            <li><strong>-s/--still:</strong> Run deauth flood continuously.</li>
+            <li><strong>-c/--channel:</strong> Set the channel for deauth flood, it will deauth all networks on the selected channel.</li>
+            <li><strong>--live:</strong> Console with overview information.</li>
+            <li><strong>--no-color:</strong> No Colors.</li>
+            <li><strong>--version:</strong> Check the current version of the program.</li>
+        </ul>
+        <a href="learn.html" style="color: blue;">Learn About ZapFlood!</a>
+        <h2>Installation</h2>
+        <p>Click on the button below to download the installer</p>
+        <h3>Version 0.1.1</h3>
+        <a href="zapfloodInstallationDEBIAN.sh" class="download-btn" download>Download ZapFloodC (DEBIAN)</a>
+        <a href="zapfloodInstallationCENTOSREDHAT.sh" class="download-btn" download>Download ZapFloodC (CENTOS / REDHAT)</a>
+        <a href="zapfloodInstallationFEDORA.sh" class="download-btn" download>Download ZapFloodC (FEDORA)</a>
+        <a href="zapfloodInstallationARCHMANJORA.sh" class="download-btn" download>Download ZapFloodC (ARCH LINUX / MANJARO)</a>
+        <br>
+        <h2>Via Console</h2>
+        <p>Below are the installation instructions for various Linux distributions:</p>
+
+        <h3><strong>DEBIAN</strong></h3>
+        <pre><code>sudo apt update && sudo apt install wget -y</code></pre>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/rasmnout.github.io/main/zapfloodInstallationDEBIAN.sh</code></pre>
+        <pre><code>sudo bash zapfloodInstallationDEBIAN.sh</code></pre>
+        <pre><code>zapflood --help</code></pre>
+
+        <p>Use these commands to install ZAPFLOOD on Debian-based systems like Ubuntu. After installation, you can check available commands and options by typing <code>zapflood --help</code>.</p>
+
+        <h3><strong>CENTOS / REDHAT</strong></h3>
+        <pre><code>sudo yum update && sudo yum install wget -y</code></pre>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/rasmnout.github.io/main/zapfloodInstallationCENTOSREDHAT.sh</code></pre>
+        <pre><code>sudo bash zapfloodInstallationCENTOSREDHAT.sh</code></pre>
+        <pre><code>zapflood --help</code></pre>
+
+        <p>For users on CentOS or Red Hat-based distributions, follow these steps to install ZAPFLOOD. The script automates the setup, making it easy to get started.</p>
+
+        <h3><strong>FEDORA</strong></h3>
+        <pre><code>sudo dnf update && sudo dnf install wget -y</code></pre>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/rasmnout.github.io/main/zapfloodInstallationFEDORA.sh</code></pre>
+        <pre><code>sudo bash zapfloodInstallationFEDORA.sh</code></pre>
+        <pre><code>zapflood --help</code></pre>
+
+        <p>These commands are tailored for Fedora users. Ensure your system is updated, then download and execute the installation script. Use the help command to explore ZAPFLOOD's features.</p>
+
+        <h3><strong>ARCH LINUX / MANJARO</strong></h3>
+        <pre><code>sudo pacman -Syu wget</code></pre>
+        <pre><code>wget https://raw.githubusercontent.com/rasmnout/rasmnout.github.io/main/zapfloodInstallationARCHMANJORA.sh</code></pre>
+        <pre><code>sudo bash zapfloodInstallationARCHMANJORA.sh</code></pre>
+        <pre><code>zapflood --help</code></pre>
+
+        <p>For Arch Linux and Manjaro users, these commands will guide you through installing ZAPFLOOD. Once installed, type <code>zapflood --help</code> to see all available options.</p>
+
+
+    </div>
+
+    <script>
+        let menu = document.getElementById('menu');
+        let frame = document.getElementById('frame');
+        let content = document.getElementById('content');
+
+        content.style.display = 'block';
+        content.classList.add('show');
+        menu.classList.add('show');
+
+        menu.addEventListener('mouseover', () => {
+            frame.style.display = 'none';
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            frame.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
