@@ -8,6 +8,6 @@ rm zapfloodConsole.zip
 sudo chmod +x /usr/local/bin/zapfloodconsole
 touch /usr/local/bin/zapflood
 echo "#!/bin/bash" > /usr/local/bin/zapflood
-echo 'python3 /usr/local/bin//zapfloodconsole/zapflood.py "$@"' >> /usr/local/bin/zapflood
+echo 'python3 /usr/local/bin/zapfloodconsole/zapflood.py "$@"' >> /usr/local/bin/zapflood
 sudo chmod +x /usr/local/bin/zapflood
 zapflood --help
