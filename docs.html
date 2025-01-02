@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasmnout Docs</title>
-    <link rel="icon" href="1735485457189.png" type="image/x-icon">
+    <title>Rasmnout</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         @font-face {
             font-family: 'YsabeauSC';
@@ -80,8 +80,53 @@
         }
 
         #content {
-            font-size: 24px;
+            font-size: 18px;
             font-family: 'YsabeauSC', sans-serif;
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 80vh;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #1e1f1e;
+            color: white;
+            font-size: 28px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #6d6d6d;
         }
 
         @keyframes fadeIn {
@@ -97,16 +142,40 @@
             display: block;
             animation: fadeIn 1s ease-in-out;
         }
+
+        /* New styles for the content box */
+        #content-box {
+            background-color: #ffffff;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #content-box h1 {
+            font-size: 30px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        #content-box p {
+            font-size: 16px;
+            color: #888;
+        }
+
     </style>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          "name": "Rasmnout Docs",
+          "name": "Rasmnout",
           "description": "Rasmnout is an integrated toolset for managing and optimizing Bluetooth, Wi-Fi, and network operations. It simplifies wireless device management, network analysis, and security tasks.",
-          "url": "https://rasmnout.github.io/docs.html",
+          "url": "https://rasmnout.github.io",
           "applicationCategory": "Networking",
-          "operatingSystem": ["Windows", "Linux", "Raspberry Pi", "ESP32", "ESP8266", "Raspberry Pi Zero", "Raspberry Pi 3", "Raspberry Pi 3 Model B", "Raspberry Pi 3 Model B+", "Raspberry Pi 3 Model A", "Raspberry Pi Zero W","Raspberry Pi Zero WH","Ravix","Ravix+","ZapFlood","ZapFlood+","Docs", "Documents", "Info", "Information", "Rasmnout Docs", "Rasmnout Documents", "Rasmnout Info"," Rasmnout Information"],
+          "operatingSystem": ["Windows", "Linux", "Raspberry Pi", "ESP32", "ESP8266", "Raspberry Pi Zero", "Raspberry Pi 3", "Raspberry Pi 3 Model B", "Raspberry Pi 3 Model B+", "Raspberry Pi 3 Model A", "Raspberry Pi Zero W","Raspberry Pi Zero WH","Ravix","Ravix+","ZapFlood","ZapFlood+","How to","Rasmnout How to", "Learn","Learning","Rasmnout Learn", "Tools", "Rasmnout Tools"],
           "offers": {
             "@type": "Offer",
             "price": "0.00",
@@ -136,7 +205,10 @@
     <div id="frame"></div>
 
     <div id="content">
-        Also Done
+        <div id="content-box">
+            <h1>ZapFlood Console</h1>
+            <p>Published: 1/2/2025</p>
+        </div>
     </div>
 
     <script>
@@ -144,7 +216,6 @@
         let frame = document.getElementById('frame');
         let content = document.getElementById('content');
 
-        // Po načtení stránky se zobrazuje obsah a menu
         content.style.display = 'block';
         content.classList.add('show');
         menu.classList.add('show');
