@@ -1,0 +1,7 @@
+Origin: Rasmnout
+Label: TCPpackages
+Codename: focal
+Architectures: amd64
+Components: main
+Description: Tools for working with TCP protocol
+SignWith: 40B40A95D250FF1CC15AB3CE4C537DA71F7AB9E4
