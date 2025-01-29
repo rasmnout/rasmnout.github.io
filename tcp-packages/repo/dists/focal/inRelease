@@ -1,36 +1,46 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Origin: Rasmnout
-Label: TCPpackages
-Codename: focal
-Date: Wed, 29 Jan 2025 18:06:47 UTC
-Architectures: amd64
-Components: main
-Description: Tools for working with TCP protocol
+Date: Wed, 29 Jan 2025 19:49:08 +0000
 MD5Sum:
- 89184da59f2490edb1b8529652198769 541 main/binary-amd64/Packages
- 2e686f0eb03f9de0a1e10d77630ef35b 396 main/binary-amd64/Packages.gz
- 7a3bb93b19153b504d0401d4896451c7 121 main/binary-amd64/Release
+ f198bf3de9fe4800ac060d61916fb674              395 Packages.gz
+ a30481b673680ed0470e37cbee405945               38 Release
+ 505a5d6eb90ed9de64dc0dd090c7d99c              908 dists/focal/Release
+ 89184da59f2490edb1b8529652198769              541 dists/focal/main/binary-amd64/Packages
+ 2e686f0eb03f9de0a1e10d77630ef35b              396 dists/focal/main/binary-amd64/Packages.gz
+ 7a3bb93b19153b504d0401d4896451c7              121 dists/focal/main/binary-amd64/Release
 SHA1:
- c2dcf34faee6df0947b1b23dd93924312f44ee73 541 main/binary-amd64/Packages
- f1c2a874d7df30fd2efad9e52c492c4811e981e3 396 main/binary-amd64/Packages.gz
- 9050e9e15114b569aceab3384a4c006e483f8388 121 main/binary-amd64/Release
+ c1f66b2b50c9fce42aaf09caced91f446b68319d              395 Packages.gz
+ 215f52bebcdbf5edf72b7a550a0c970bb1fabedc               38 Release
+ 02c0a94ce9ab8effdf09458ca4af107008058a51              908 dists/focal/Release
+ c2dcf34faee6df0947b1b23dd93924312f44ee73              541 dists/focal/main/binary-amd64/Packages
+ f1c2a874d7df30fd2efad9e52c492c4811e981e3              396 dists/focal/main/binary-amd64/Packages.gz
+ 9050e9e15114b569aceab3384a4c006e483f8388              121 dists/focal/main/binary-amd64/Release
 SHA256:
- a1943e49324ca31e6dd25dbe0fa3858669ea9cd556e7d6f11ae8b35b2fdcabed 541 main/binary-amd64/Packages
- 146768b2e00bec3b578226ed8e16450ea18ceab9014ee71b7bae1c09731f7528 396 main/binary-amd64/Packages.gz
- 7202d8d14f8469f9ed7791476fd093bf92b25cc3d4ccdb53a9ce8fb21fea2c4e 121 main/binary-amd64/Release
+ 2e4e3be49a071677f6160cf8ffb946c0d2d43652f492abffc8027b5fd44840ad              395 Packages.gz
+ 3d3f9b8901608e852b4c52781d69c3795b80c8ad0a3e53871549c5012bf3f8e1               38 Release
+ f53cb0922d95df463544df382442049454c4a70f8d90771a69c9da0feab57e6c              908 dists/focal/Release
+ a1943e49324ca31e6dd25dbe0fa3858669ea9cd556e7d6f11ae8b35b2fdcabed              541 dists/focal/main/binary-amd64/Packages
+ 146768b2e00bec3b578226ed8e16450ea18ceab9014ee71b7bae1c09731f7528              396 dists/focal/main/binary-amd64/Packages.gz
+ 7202d8d14f8469f9ed7791476fd093bf92b25cc3d4ccdb53a9ce8fb21fea2c4e              121 dists/focal/main/binary-amd64/Release
+SHA512:
+ f9fe43573360a847e4bc30a34fc9e589c328b9456b77dabe6c96538ef2a41d0d6a74ba5f4370197e142fca1de7f6545dbac38d9342a82d1ac8032767a086df6b              395 Packages.gz
+ 73e79d02eb54b3a99f321586663ecf8e1a645d2123a0217bd2ccddc78bda762a72ec19170f613bd4160677b954b1d45621f68f6387ccf0edc83b2539b2512dec               38 Release
+ d314d3fefdffca33e1b198fbaf5afa2a91485e0e4a07690490a10bd510af5f2b059849fa8f401c9112d3ab84a9c16ccf554c39ac2d03eb495f0829cfbaebf544              908 dists/focal/Release
+ 0f995c1f7ac6792c4d44eca4ea5246fd5d7d1b6e508d83701c81fcada2d80c8adfb6355cfa264387659e2c7a4023534422cfa2ba4ba8b29cd068c78f89a0b481              541 dists/focal/main/binary-amd64/Packages
+ e0c99a47e118c9c5799f6f068ae8fb48d727bee14d11c81b2aed1d5b265834f62531fe8a4af74a5ec95a6cbbdd0216fce2d5c196af29a2da674e9a13683c4d50              396 dists/focal/main/binary-amd64/Packages.gz
+ d0bb92e0e0990e97aa6d8e622201c235d64562ead900711b16e126653af9879f76b701e8469b2941f9d5bfb046228c25ee4f1353227b793026ee437d7960aaea              121 dists/focal/main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQGzBAEBCgAdFiEEQLQKldJQ/xzBWrPOTFN9px96ueQFAmeabjgACgkQTFN9px96
-ueTvVgwAoHiXiQ58mpgtHVQL8LRLZx6MJMdnSDbiKqL0xyg+E42+06G/u41V4vf8
-McHaBxG/ibv5JcG/5DLcH+C289kjZ6mJrSg+qQiP3J2TclukZxbpjoyS58X4OarC
-7eTiMfN84dfjk72Sa70CZjwiAAc9Y1Bo0J4rSYpKp2v2rohx9RYbBU3cr0zcar8O
-dmUlstUyJgHM+ccEIAwgDD2Q7TwrJQNIuDkubQne0JIrkw9IasXNHxtpuapLHos/
-yCY9K0lNhFJ+R226Kv4rYZMaSrH7LRo8xmJzxaw2IjeAz7UFn5Kv+8Ou0uRXXnR1
-xlOnJffB4/ikM09PE303OlkXLMLMhLNLmDTfTCFCtVMGAnHgD8YVRFd/WAf/kwmd
-SiceMctfkK5eKQmhXy+Nw/17kCUTnMsJUo5k3o8S9GhpHboIeKLWcxay0juti1QI
-z4k3xiCgZ1F9hjHwlcwHuZvVnxXvC24OQmVTZjKp6nm98RP/2Ed6yjj1tYj4g4cI
-B8oGrcr3
-=1dvu
+iQHHBAEBCgAxFiEEQLQKldJQ/xzBWrPOTFN9px96ueQFAmeahkwTHHJhc21ub3V0
+QGdtYWlsLmNvbQAKCRBMU32nH3q55MwwDACmVsS8LmlOoTVgku3Z+tyjxHuEEll+
+nps9lKbne56127TfukcZHX+S2ih8qKwmCUHxzpHWbp247GKNpsSAVgKo4IESsWhm
+CeKO5LbXwtGNI2nYbcpUefKLhLkkvyVyq6Ln/Z5COeFdsCZITiiT96oHx0wDsgBy
+k6ChNkEcaCsd3IG+LqbW/et59SHW3fIpVdjyhcgsAI4ySVN2iUOT+ce3hE7iOXIc
+1oF9r7GXEorsohJ8jseYANaI9Sw/Hujde1/MsgcqOrU18TC1QlauP6lP1QlTW7PI
+AvaI3sBuVMKZkxCBXUhk/aN2ZIqLT0fz3AOMY1iC9VXpUydrN7pyFtU8oPRahZ/G
+nNxfcB7N5BppgZf+OBxjELg2PdyLJJBJaSMdRJYr1DNQSBfQtEyoj7yVl7mSq3+w
+D8FtFtjbpp3DM53afIcrmB03caUECK5Z89D683hJuV+tdnumdSQuKzIF+1FCShN9
+/BnxpwthLtUoWkTwoaeWXMuwKAHhBqj9EIw=
+=3lsA
 -----END PGP SIGNATURE-----
