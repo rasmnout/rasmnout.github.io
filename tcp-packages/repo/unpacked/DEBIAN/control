@@ -1,0 +1,9 @@
+Package: tcppackages
+Version: 1.3
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Maintainer: Rasmnout ( rasmnout.github.io )
+Description: Tools for working with TCP protocol
+ This package includes various TCP-related programs such as tcphelp, tcprecv, tcpsend, tcpserv, and tcptraffic.
