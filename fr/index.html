@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets Rasmnout</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #111;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border-bottom: 4px solid #FFFFFF;
+    }
+    h1 {
+      font-size: 60px;
+      margin: 0;
+      letter-spacing: 2px;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    p {
+      color: white;
+      font-size: 18px;
+    }
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background-color: #222;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+      z-index: 1;
+      padding: 5px 0;
+    }
+    .language-dropdown button {
+      background: #222;
+      color: white;
+      padding: 8px 18px;
+      border: none;
+      width: auto;
+      min-width: 100px;
+      text-align: left;
+      cursor: pointer;
+      border-bottom: 1px solid #444;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .language-dropdown button:last-child {
+      border-bottom: none;
+    }
+    .language-dropdown button:hover {
+      background: #444;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #222;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+      background: #444;
+    }
+    .card h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .card p {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .button {
+      background: #FFFFFF;
+      padding: 12px 25px;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+    }
+    .button:hover {
+      background-color: #C4C2C2;
+      transform: translateY(-3px);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      border-top: 4px solid #FFFFFF;
+      font-size: 16px;
+    }
+    footer a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .typewriter {
+      font-family: 'Courier New', Courier, monospace;
+      color: white;
+      font-size: 60px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid #FFFFFF;
+      animation: typing 12s steps(8) infinite, blink-caret 0.75s step-end infinite;
+      display: inline-block;
+    }
+
+    @keyframes typing {
+      0% { content: "Rasmnout"; }
+      10% { content: "Rasmnou"; }
+      20% { content: "Rasmno"; }
+      30% { content: "Rasmn"; }
+      40% { content: "Rasm"; }
+      50% { content: "Ras"; }
+      60% { content: "Ra"; }
+      70% { content: "R"; }
+      80% { content: ""; }
+      90% { content: "R"; }
+      100% { content: "Rasmnout"; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><span class="typewriter">Rasmnout</span></h1>
+    <p>Explorez les outils les plus modernes pour la communication réseau, la surveillance et plus encore.</p>
+  </header>
+
+  <div class="language-selector" onclick="toggleLanguageDropdown()">🇫🇷</div>
+  <div class="language-dropdown" id="languageDropdown">
+    <button onclick="window.location.href='/en/'">🇬🇧 Anglais</button>
+    <button onclick="window.location.href='/de/'">🇩🇪 Allemand</button>
+    <button onclick="window.location.href='/cz/'">🇨🇿 Tchèque</button>
+    <button onclick="window.location.href='/fr/'">🇫🇷 Français</button>
+    <button onclick="window.location.href='/es/'">🇪🇸 Espagnol</button>
+  </div>
+
+  <section class="projects">
+    <div class="card">
+      <h2>Paquet TCP</h2>
+      <p>Outils pour une communication réseau efficace via les protocoles TCP.</p>
+      <a href="tcppackage/" class="button">Explorer</a>
+    </div>
+
+    <div class="card">
+      <h2>RMproxy</h2>
+      <p>Un outil à faible latence pour le redirectionnement du trafic TCP, idéal pour la surveillance et le filtrage.</p>
+      <a href="rmproxy/" class="button">Explorer</a>
+    </div>
+
+    <div class="card">
+      <h2>Installateur RNI</h2>
+      <p>Installation facile des paquets depuis GitHub et d'autres sites web.</p>
+      <a href="rni/" class="button">Explorer</a>
+    </div>
+
+    <div class="card">
+      <h2>Informations Utilisateur WEB</h2>
+      <p>Un outil qui invite l'utilisateur à fournir des informations détaillées et collecte des données lors de la configuration.</p>
+      <a href="web-user-info/" class="button">Explorer</a>
+    </div>
+
+    <div class="card">
+      <h2>Minecraft CNSL</h2>
+      <p>Un outil destiné à utiliser et personnaliser l'environnement Minecraft.</p>
+      <a href="minecraft/" class="button">Explorer</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rasmnout. Tous droits réservés. <br> <a href="a-propos-de-nous.html">À propos de nous</a></p>
+  </footer>
+
+  <script>
+    function toggleLanguageDropdown() {
+      var dropdown = document.getElementById('languageDropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
