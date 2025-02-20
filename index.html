@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasmnout</title>
+    <script>
+        window.onload = function() {
+            const lang = navigator.language || navigator.userLanguage;
+            const langCode = lang.slice(0, 2).toLowerCase();
+
+            switch(langCode) {
+                case 'cz':
+                    window.location.href = '/cz/';
+                    break;
+                case 'de':
+                    window.location.href = '/de/';
+                    break;
+                case 'en':
+                    window.location.href = '/en/';
+                    break;
+                case 'es':
+                    window.location.href = '/es/';
+                    break;
+                case 'fr':
+                    window.location.href = '/fr/';
+                    break;
+                default:
+                    window.location.href = '/en/';
+                    break;
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
